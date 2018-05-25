@@ -1,0 +1,49 @@
+<div class="row" *ngIf="!showResponse">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        {{compute_title}}
+        <textarea class="box" [(ngModel)]="value" (ngModelChange)="valueChanged()" title="input"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="showResponse">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        {{compute_title}}
+        <textarea class="box" [(ngModel)]="value" (ngModelChange)="valueChanged()" title="input"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+        {{reverse_compute_title}}
+        <textarea class="box" [(ngModel)]="response" (ngModelChange)="responseChanged()" title="output"
+                  *ngIf="canReversible"></textarea>
+        <textarea class="box" [(ngModel)]="response" (ngModelChange)="responseChanged()" title="output"
+                  *ngIf="!canReversible" readonly></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!auto_calculate">
+  <div class="row" *ngIf="!showReverseCalculateButton">
+    <div class="col-12">
+      <button (click)="compute()"> Hesapla</button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="showReverseCalculateButton">
+    <div class="col-6">
+      <button (click)="compute()"> Hesapla</button>
+    </div>
+    <div class="col-6">
+      <button (click)="reverseCompute()"> Hesapla</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+textarea.box {
+  border: 1px solid #1c6cb0;
+  background: rgba(255, 255, 255, 0.9);
+  float: left;
+  width: 100%;
+  height: 250px;
+  font-family: Arial, serif;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  overflow: auto;
+  padding: 4px;
+  resize: none;
+  text-align: left;
+}
