@@ -1,18 +1,26 @@
 import {Routes} from '@angular/router';
-import {UrlDecodeComponent} from './tools/url-decode/url-decode.component';
-import {Base64Component} from './tools/base64/base64.component';
+import {UrlEncodeDecodeComponent} from './tools/url-encode-decode/url-encode-decode.component';
+import {Base64DecodeEncodeComponent} from './tools/base64/base64-decode-encode.component';
 import {Md5EncodeComponent} from './tools/md5-encode/md5-encode.component';
+import {UrlParseComponent} from './tools/url-parse/url-parse.component';
+import {HtmlEncodeDecodeComponent} from './tools/html-encode-decode/html-encode-decode.component';
 
 export const routes: Routes = [
   {
-    path: 'url-decode',
-    component: UrlDecodeComponent,
+    path: 'url-encode-decode',
+    component: UrlEncodeDecodeComponent,
     data: {
       title: 'URL Decoder'
     }
+  },{
+    path: 'url-parser',
+    component: UrlParseComponent,
+    data: {
+      title: 'URL Parser'
+    }
   }, {
     path: 'base64-encode-decode',
-    component: Base64Component,
+    component: Base64DecodeEncodeComponent,
     data: {
       title: 'Base64 Encode Decode'
     }
@@ -23,8 +31,14 @@ export const routes: Routes = [
       title: 'MD5 Encode'
     }
   }, {
+    path: 'html-encode-decode',
+    component: HtmlEncodeDecodeComponent,
+    data: {
+      title: 'HTML Encode Decode'
+    }
+  }, {
     path: '',
-    redirectTo: 'url-decode',
+    redirectTo: 'url-encode-decode',
     pathMatch: 'full'
   }
 ];
